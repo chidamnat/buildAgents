@@ -6,10 +6,10 @@ Welcome to **Build Your Agents 101** - a hands-on tutorial series where you'll l
 
 This tutorial takes you through building a complete SQL query agent that converts natural language questions into database queries. Along the way, you'll master:
 
-- 🏗️ **ReAct Pattern** - The reasoning and acting loop that powers modern agents
-- 🔧 **Function Calling** - How LLMs interact with external tools
-- 🛡️ **Security** - Building safe agents that can't be exploited
-- 🎯 **Practical Skills** - Real-world agent development patterns
+- **ReAct Pattern** - The reasoning and acting loop that powers modern agents
+- **Function Calling** - How LLMs interact with external tools
+- **Security** - Building safe agents that can't be exploited
+- **Practical Skills** - Real-world agent development patterns
 
 ## The Project
 
