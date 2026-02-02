@@ -16,7 +16,9 @@ A bookstore database with 3 tables:
 
 ```bash
 # Install dependencies
-pip install faker factory-boy
+python -m pip venv venv
+python -m pip install -r requirements.txt
+**requirements:** [`requirements.txt`](https://github.com/chidamnat/buildAgents/blob/main/requirements.txt)
 
 # Create database
 python -m sql_agent.database
