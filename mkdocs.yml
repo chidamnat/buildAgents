@@ -1,7 +1,7 @@
 site_name: Build Your Agents 101
 site_description: Learn to build AI agents from scratch - A hands-on tutorial series
 site_author: Chidam Gopal
-site_url: https://yourusername.github.io/buildAgents
+site_url: https://chidamnat.github.io/buildAgents
 
 theme:
   name: material
@@ -59,4 +59,4 @@ plugins:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/yourusername/buildAgents
+      link: https://github.com/chidamnat/buildAgents
