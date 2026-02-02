@@ -35,5 +35,3 @@ class OrderFactory(factory.Factory):
     book_id = factory.LazyFunction(lambda: random.randint(1, 100))
     quantity = factory.LazyFunction(lambda: random.randint(1, 3))
     order_date = factory.Faker("date_between", start_date="-1y", end_date="today")
-    # ideally price * quantity
-    # total_amount = factory.LazyFunction(lambda: round(random.uniform(10.0, 200.0), 2))
