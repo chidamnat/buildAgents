@@ -60,7 +60,7 @@ class BookFactory(factory.Factory):
 **Pros:** Scalable, realistic data, industry standard
 **Cons:** Slight learning curve
 
-**Full code:** [`sql_agent/models/book.py`](https://github.com/yourusername/buildAgents/blob/main/sql_agent/models/book.py)
+**Full code:** [`sql_agent/models/book.py`](https://github.com/chidamnat/buildAgents/blob/main/sql_agent/models/book.py)
 
 ## Database Schema
 
@@ -78,7 +78,7 @@ CREATE TABLE IF NOT EXISTS books(
 
 Similar tables for `customers` and `orders` with foreign keys.
 
-**Full schema:** [`sql_agent/database.py`](https://github.com/yourusername/buildAgents/blob/main/sql_agent/database.py)
+**Full schema:** [`sql_agent/database.py`](https://github.com/chidamnat/buildAgents/blob/main/sql_agent/database.py)
 
 ## Data Generation
 
@@ -93,7 +93,7 @@ def generate_sample_data(num_books=20, num_customers=20, num_orders=30):
 
 Uses generators for memory efficiency with large datasets.
 
-**Full code:** [`sql_agent/data_prep.py`](https://github.com/yourusername/buildAgents/blob/main/sql_agent/data_prep.py)
+**Full code:** [`sql_agent/data_prep.py`](https://github.com/chidamnat/buildAgents/blob/main/sql_agent/data_prep.py)
 
 ## Verify Your Database
 

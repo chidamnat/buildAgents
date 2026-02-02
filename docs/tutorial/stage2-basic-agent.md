@@ -60,7 +60,7 @@ def run_agent(user_question: str) -> str:
             return response.content  # Final answer
 ```
 
-**Full code:** [`sql_agent/agent_basic.py`](https://github.com/yourusername/buildAgents/blob/main/sql_agent/agent_basic.py)
+**Full code:** [`sql_agent/agent_basic.py`](https://github.com/chidamnat/buildAgents/blob/main/sql_agent/agent_basic.py)
 
 ## Building Blocks
 
@@ -116,7 +116,7 @@ def validate_query(query: str) -> tuple[bool, str]:
     return True, ""
 ```
 
-**Full code:** [`sql_agent/tools.py`](https://github.com/yourusername/buildAgents/blob/main/sql_agent/tools.py)
+**Full code:** [`sql_agent/tools.py`](https://github.com/chidamnat/buildAgents/blob/main/sql_agent/tools.py)
 
 ### 3. Schema Caching
 
