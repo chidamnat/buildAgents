@@ -6,12 +6,13 @@
 
 ## What We're Building
 
+```
 Same SQL agent as Stage 2, but:
 - Less code (~80 lines vs ~110 lines)
 - More features (schema validation, uery, schema, list_tables vs just execute_sql)
 - Battle-tested reliability
 - Built-in security & validation
-
+```
 ## Quick Start
 
 ```bash
