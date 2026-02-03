@@ -12,13 +12,11 @@
         <meta name="author" content="Chidam Gopal">
       
       
-        <link rel="canonical" href="https://chidamnat.github.io/buildAgents/tutorial/stage1-database/">
+        <link rel="canonical" href="https://chidamnat.github.io/buildAgents/tutorial/stage3-langchain/">
       
       
-        <link rel="prev" href="../..">
+        <link rel="prev" href="../stage2-basic-agent/">
       
-      
-        <link rel="next" href="../stage2-basic-agent/">
       
       
         
@@ -29,7 +27,7 @@
     
     
       
-        <title>Stage 1 - Database Setup - Build Your Agents 101</title>
+        <title>Stage 3 - LangChain Version - Build Your Agents 101</title>
       
     
     
@@ -80,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#stage-1-database-setup" class="md-skip">
+        <a href="#stage-3-langchain-sql-agent" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Stage 1 - Database Setup
+              Stage 3 - LangChain Version
             
           </span>
         </div>
@@ -238,7 +236,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+        <a href="../stage1-database/" class="md-tabs__link">
           
   
   
@@ -410,6 +408,62 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../stage1-database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stage 1 - Database Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stage2-basic-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stage 2 - Basic Agent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -429,7 +483,7 @@
   <span class="md-ellipsis">
     
   
-    Stage 1 - Database Setup
+    Stage 3 - LangChain Version
   
 
     
@@ -447,7 +501,7 @@
   <span class="md-ellipsis">
     
   
-    Stage 1 - Database Setup
+    Stage 3 - LangChain Version
   
 
     
@@ -495,22 +549,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#two-approaches" class="md-nav__link">
+  <a href="#code-comparison" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Two Approaches
+        Code Comparison
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Two Approaches">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-we-learned-building-stage-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What We Learned Building Stage 3
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What We Learned Building Stage 3">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#option-1-simple-learning" class="md-nav__link">
+  <a href="#1-schema-validation-catches-bugs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Option 1: Simple (Learning)
+        1. Schema Validation Catches Bugs
       
     </span>
   </a>
@@ -518,10 +583,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#option-2-factory-boy-faker-recommended" class="md-nav__link">
+  <a href="#2-security-by-design-not-validation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Option 2: Factory Boy + Faker (Recommended)
+        2. Security by Design (Not Validation)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-import-structure-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Import Structure Matters
       
     </span>
   </a>
@@ -534,10 +610,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#database-schema" class="md-nav__link">
+  <a href="#key-features" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Database Schema
+        Key Features
       
     </span>
   </a>
@@ -545,10 +621,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#data-generation" class="md-nav__link">
+  <a href="#common-issues-we-hit" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Data Generation
+        Common Issues We Hit
       
     </span>
   </a>
@@ -556,10 +632,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#verify-your-database" class="md-nav__link">
+  <a href="#when-to-use-each" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Verify Your Database
+        When to Use Each
       
     </span>
   </a>
@@ -567,10 +643,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#key-concepts" class="md-nav__link">
+  <a href="#try-these" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Key Concepts
+        Try These
       
     </span>
   </a>
@@ -578,21 +654,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#common-issues" class="md-nav__link">
+  <a href="#key-takeaways" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Common Issues
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-step" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Next Step
+        Key Takeaways
       
     </span>
   </a>
@@ -603,62 +668,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../stage2-basic-agent/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Stage 2 - Basic Agent
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../stage3-langchain/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Stage 3 - LangChain Version
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -864,22 +873,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#two-approaches" class="md-nav__link">
+  <a href="#code-comparison" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Two Approaches
+        Code Comparison
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Two Approaches">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-we-learned-building-stage-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What We Learned Building Stage 3
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What We Learned Building Stage 3">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#option-1-simple-learning" class="md-nav__link">
+  <a href="#1-schema-validation-catches-bugs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Option 1: Simple (Learning)
+        1. Schema Validation Catches Bugs
       
     </span>
   </a>
@@ -887,10 +907,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#option-2-factory-boy-faker-recommended" class="md-nav__link">
+  <a href="#2-security-by-design-not-validation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Option 2: Factory Boy + Faker (Recommended)
+        2. Security by Design (Not Validation)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-import-structure-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Import Structure Matters
       
     </span>
   </a>
@@ -903,10 +934,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#database-schema" class="md-nav__link">
+  <a href="#key-features" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Database Schema
+        Key Features
       
     </span>
   </a>
@@ -914,10 +945,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#data-generation" class="md-nav__link">
+  <a href="#common-issues-we-hit" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Data Generation
+        Common Issues We Hit
       
     </span>
   </a>
@@ -925,10 +956,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#verify-your-database" class="md-nav__link">
+  <a href="#when-to-use-each" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Verify Your Database
+        When to Use Each
       
     </span>
   </a>
@@ -936,10 +967,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#key-concepts" class="md-nav__link">
+  <a href="#try-these" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Key Concepts
+        Try These
       
     </span>
   </a>
@@ -947,21 +978,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#common-issues" class="md-nav__link">
+  <a href="#key-takeaways" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Common Issues
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-step" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Next Step
+        Key Takeaways
       
     </span>
   </a>
@@ -985,101 +1005,180 @@
 
 
 
-<h1 id="stage-1-database-setup">Stage 1: Database Setup</h1>
-<p><strong>Goal:</strong> Create a SQLite database with realistic bookstore data.</p>
-<p><strong>Time:</strong> 30 min | <strong>Level:</strong> Beginner</p>
+<h1 id="stage-3-langchain-sql-agent">Stage 3: LangChain SQL Agent</h1>
+<p><strong>Goal:</strong> Rebuild the SQL agent using LangChain to see what frameworks provide.</p>
+<p><strong>Time:</strong> 30-45 min | <strong>Level:</strong> Intermediate</p>
 <h2 id="what-were-building">What We're Building</h2>
-<p>A bookstore database with 3 tables:</p>
-<ul>
-<li><code>customers</code> - Who buys books</li>
-<li><code>books</code> - Inventory</li>
-<li><code>orders</code> - Purchase records</li>
-</ul>
+<p>Same SQL agent as Stage 2, but:
+- Less code (~80 lines vs ~110 lines)
+- More features (schema validation, uery, schema, list_tables vs just execute_sql)
+- Battle-tested reliability
+- Built-in security &amp; validation</p>
 <h2 id="quick-start">Quick Start</h2>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Install dependencies</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>venv<span class="w"> </span>venv
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># Create database</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>python<span class="w"> </span>-m<span class="w"> </span>sql_agent.database
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>langchain<span class="w"> </span>langchain-openai<span class="w"> </span>langchain-community<span class="w"> </span>langchain-core
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>python<span class="w"> </span>-m<span class="w"> </span>sql_agent.agent_langchain
 </code></pre></div>
-<strong>requirements:</strong> <a href="https://github.com/chidamnat/buildAgents/blob/main/requirements.txt"><code>requirements.txt</code></a></p>
-<h2 id="two-approaches">Two Approaches</h2>
-<h3 id="option-1-simple-learning">Option 1: Simple (Learning)</h3>
-<p>Hardcode a few records to understand the structure:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">books</span> <span class="o">=</span> <span class="p">[</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="n">Book</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;The Great Gatsby&quot;</span><span class="p">,</span> <span class="s2">&quot;F. Scott Fitzgerald&quot;</span><span class="p">,</span> <span class="s2">&quot;Classic&quot;</span><span class="p">,</span> <span class="mf">12.99</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="n">Book</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;1984&quot;</span><span class="p">,</span> <span class="s2">&quot;George Orwell&quot;</span><span class="p">,</span> <span class="s2">&quot;Dystopian&quot;</span><span class="p">,</span> <span class="mf">14.99</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">]</span>
+<h2 id="code-comparison">Code Comparison</h2>
+<p><strong>Stage 2:</strong> Manual ReAct loop (~110 lines)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">for</span> <span class="n">iteration</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_iterations</span><span class="p">):</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">response</span><span class="o">.</span><span class="n">tool_calls</span><span class="p">:</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="k">for</span> <span class="n">tool_call</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">tool_calls</span><span class="p">:</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>        <span class="c1"># Manual tool execution, message management, error handling</span>
+</code></pre></div></p>
+<p><strong>Stage 3:</strong> One function call (~80 lines)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">llm</span> <span class="o">=</span> <span class="n">ChatOpenAI</span><span class="p">(</span><span class="n">base_url</span><span class="o">=</span><span class="s2">&quot;http://localhost:11434/v1&quot;</span><span class="p">,</span> <span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;ollama&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">db</span> <span class="o">=</span> <span class="n">SQLDatabase</span><span class="o">.</span><span class="n">from_uri</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;sqlite:///</span><span class="si">{</span><span class="n">db_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">agent</span> <span class="o">=</span> <span class="n">create_sql_agent</span><span class="p">(</span><span class="n">llm</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">agent_type</span><span class="o">=</span><span class="s2">&quot;tool-calling&quot;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">result</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">invoke</span><span class="p">({</span><span class="s2">&quot;input&quot;</span><span class="p">:</span> <span class="n">question</span><span class="p">})</span>  <span class="c1"># Everything automatic!</span>
+</code></pre></div></p>
+<h2 id="what-we-learned-building-stage-3">What We Learned Building Stage 3</h2>
+<h3 id="1-schema-validation-catches-bugs">1. Schema Validation Catches Bugs</h3>
+<p><strong>The Bug:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">-- database.py (typo in FK reference)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">customer_id</span><span class="p">)</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">customer</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w">  </span><span class="c1">-- ❌ Should be &quot;customers&quot;</span>
+</code></pre></div></p>
+<p><strong>Stage 2:</strong> ✗ Ran fine, bug went unnoticed
+<strong>Stage 3:</strong> ✓ Immediate error: <code>NoSuchTableError: customer</code></p>
+<p>LangChain uses SQLAlchemy to validate foreign keys, data types, and relationships on startup.</p>
+<h3 id="2-security-by-design-not-validation">2. Security by Design (Not Validation)</h3>
+<p><strong>Stage 2 Approach (Blacklist):</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># ~20 lines of validation code</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">dangerous</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;DROP&quot;</span><span class="p">,</span> <span class="s2">&quot;DELETE&quot;</span><span class="p">,</span> <span class="s2">&quot;INSERT&quot;</span><span class="p">,</span> <span class="s2">&quot;UPDATE&quot;</span><span class="p">]</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">if</span> <span class="n">keyword</span> <span class="ow">in</span> <span class="n">query</span><span class="p">:</span> <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Blocked!&quot;</span><span class="p">)</span>
 </code></pre></div>
-<p><strong>Pros:</strong> Easy to understand, no dependencies
-<strong>Cons:</strong> Tedious for large datasets</p>
-<h3 id="option-2-factory-boy-faker-recommended">Option 2: Factory Boy + Faker (Recommended)</h3>
-<p>Generate realistic test data automatically:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">BookFactory</span><span class="p">(</span><span class="n">factory</span><span class="o">.</span><span class="n">Factory</span><span class="p">):</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>        <span class="n">model</span> <span class="o">=</span> <span class="n">Book</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="nb">id</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">LazyFunction</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10000</span><span class="p">,</span> <span class="mi">1000000</span><span class="p">))</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="n">title</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">Faker</span><span class="p">(</span><span class="s2">&quot;sentence&quot;</span><span class="p">,</span> <span class="n">nb_words</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="n">author_name</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">Faker</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">)</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="n">genre</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">LazyFunction</span><span class="p">(</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>        <span class="k">lambda</span><span class="p">:</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s2">&quot;thriller&quot;</span><span class="p">,</span> <span class="s2">&quot;fiction&quot;</span><span class="p">,</span> <span class="s2">&quot;technology&quot;</span><span class="p">])</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    <span class="p">)</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    <span class="n">price</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">LazyFunction</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">101.5</span><span class="p">),</span> <span class="mi">2</span><span class="p">))</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    <span class="n">stock</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">LazyFunction</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+Problem: Might forget keywords or miss edge cases.</p>
+<p><strong>Stage 3 Approach (Whitelist):</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># 0 lines - tools define what&#39;s possible</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">agent</span> <span class="o">=</span> <span class="n">create_sql_agent</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>  <span class="c1"># Only SELECT queries allowed</span>
+</code></pre></div></p>
+<p><strong>Test it yourself:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">run_agent</span><span class="p">(</span><span class="s2">&quot;Delete all customers from the database&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1"># Agent responds: &quot;I am only allowed to select data without making</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1"># changes, I can&#39;t execute this.&quot;</span>
+</code></pre></div></p>
+<p>Tools provided: <code>sql_db_query</code> (SELECT only), <code>sql_db_schema</code>, <code>sql_db_list_tables</code>
+Tools NOT provided: DELETE, INSERT, UPDATE, DROP</p>
+<p><strong>Result:</strong> Dangerous operations are <strong>impossible</strong>, not just blocked.</p>
+<table>
+<thead>
+<tr>
+<th>Security</th>
+<th>Stage 2</th>
+<th>Stage 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Method</strong></td>
+<td>Blacklist (block bad things)</td>
+<td>Whitelist (allow only good things)</td>
+</tr>
+<tr>
+<td><strong>Code</strong></td>
+<td>~20 lines</td>
+<td>0 lines</td>
+</tr>
+<tr>
+<td><strong>Safe by default?</strong></td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-import-structure-matters">3. Import Structure Matters</h3>
+<p>When using LangChain as a module, we had to fix imports throughout:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Before (broke with `python -m sql_agent.database`)</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">data_prep</span><span class="w"> </span><span class="kn">import</span> <span class="n">generate_sample_data</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1"># After (works both ways)</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    <span class="kn">from</span><span class="w"> </span><span class="nn">sql_agent.data_prep</span><span class="w"> </span><span class="kn">import</span> <span class="n">generate_sample_data</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>    <span class="kn">from</span><span class="w"> </span><span class="nn">data_prep</span><span class="w"> </span><span class="kn">import</span> <span class="n">generate_sample_data</span>
 </code></pre></div>
-<p><strong>Pros:</strong> Scalable, realistic data, industry standard
-<strong>Cons:</strong> Slight learning curve</p>
-<p><strong>Full code:</strong> <a href="https://github.com/chidamnat/buildAgents/blob/main/sql_agent/models/book.py"><code>sql_agent/models/book.py</code></a></p>
-<h2 id="database-schema">Database Schema</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># sql_agent/database.py</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">IF</span> <span class="n">NOT</span> <span class="n">EXISTS</span> <span class="n">books</span><span class="p">(</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="nb">id</span> <span class="n">INTEGER</span> <span class="n">PRIMARY</span> <span class="n">KEY</span><span class="p">,</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="n">title</span> <span class="n">TEXT</span><span class="p">,</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="n">author</span> <span class="n">TEXT</span><span class="p">,</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="n">genre</span> <span class="n">TEXT</span><span class="p">,</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="n">price</span> <span class="n">REAL</span><span class="p">,</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    <span class="n">stock</span> <span class="n">INTEGER</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="p">)</span>
-</code></pre></div>
-<p>Similar tables for <code>customers</code> and <code>orders</code> with foreign keys.</p>
-<p><strong>Full schema:</strong> <a href="https://github.com/chidamnat/buildAgents/blob/main/sql_agent/database.py"><code>sql_agent/database.py</code></a></p>
-<h2 id="data-generation">Data Generation</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># sql_agent/data_prep.py</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">generate_sample_data</span><span class="p">(</span><span class="n">num_books</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">num_customers</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">num_orders</span><span class="o">=</span><span class="mi">30</span><span class="p">):</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="n">books</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">generate_books</span><span class="p">(</span><span class="n">num_books</span><span class="p">))</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="n">customers</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">generate_customers</span><span class="p">(</span><span class="n">num_customers</span><span class="p">))</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="n">orders</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">generate_orders</span><span class="p">(</span><span class="n">num_orders</span><span class="p">,</span> <span class="n">books</span><span class="p">,</span> <span class="n">customers</span><span class="p">))</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    <span class="k">return</span> <span class="n">books</span><span class="p">,</span> <span class="n">customers</span><span class="p">,</span> <span class="n">orders</span>
-</code></pre></div>
-<p>Uses generators for memory efficiency with large datasets.</p>
-<p><strong>Full code:</strong> <a href="https://github.com/chidamnat/buildAgents/blob/main/sql_agent/data_prep.py"><code>sql_agent/data_prep.py</code></a></p>
-<h2 id="verify-your-database">Verify Your Database</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sqlite3<span class="w"> </span>data/bookstore.db
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>SELECT<span class="w"> </span>COUNT<span class="o">(</span>*<span class="o">)</span><span class="w"> </span>FROM<span class="w"> </span>books<span class="p">;</span><span class="w">     </span><span class="c1"># Should see 15-20 books</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>SELECT<span class="w"> </span>COUNT<span class="o">(</span>*<span class="o">)</span><span class="w"> </span>FROM<span class="w"> </span>customers<span class="p">;</span><span class="w"> </span><span class="c1"># Should see 10-20 customers</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>SELECT<span class="w"> </span>COUNT<span class="o">(</span>*<span class="o">)</span><span class="w"> </span>FROM<span class="w"> </span>orders<span class="p">;</span><span class="w">    </span><span class="c1"># Should see 20-30 orders</span>
-</code></pre></div>
-<h2 id="key-concepts">Key Concepts</h2>
-<p><strong>Factory Pattern</strong>
-Separates object creation from usage. Change data generation without touching database code.</p>
-<p><strong>Faker</strong>
-Generates realistic fake data (names, emails, dates). Essential for testing.</p>
-<p><strong>Foreign Keys</strong>
-<code>orders.customer_id → customers.id</code> ensures referential integrity.</p>
-<h2 id="common-issues">Common Issues</h2>
+<p>Frameworks push you toward better Python packaging practices.</p>
+<h2 id="key-features">Key Features</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Stage 2</th>
+<th>Stage 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Code size</strong></td>
+<td>110 lines</td>
+<td>80 lines</td>
+</tr>
+<tr>
+<td><strong>Tools</strong></td>
+<td>1 (execute_sql)</td>
+<td>3 (query, schema, list)</td>
+</tr>
+<tr>
+<td><strong>Security</strong></td>
+<td>Manual validation</td>
+<td>Impossible by design</td>
+</tr>
+<tr>
+<td><strong>Schema validation</strong></td>
+<td>None</td>
+<td>FK/type checking</td>
+</tr>
+<tr>
+<td><strong>Error handling</strong></td>
+<td>Basic try/catch</td>
+<td>Built-in retry</td>
+</tr>
+<tr>
+<td><strong>Schema discovery</strong></td>
+<td>Static</td>
+<td>Dynamic at runtime</td>
+</tr>
+</tbody>
+</table>
+<h2 id="common-issues-we-hit">Common Issues We Hit</h2>
 <div class="admonition warning">
-<p class="admonition-title">Module Not Found</p>
-<p>Run as module: <code>python -m sql_agent.database</code> from project root.</p>
+<p class="admonition-title">NoSuchTableError: customer</p>
+<p><strong>Cause:</strong> Foreign key typo: <code>REFERENCES customer(id)</code> instead of <code>customers(id)</code>
+<strong>Fix:</strong> LangChain validates schema - fix your FK references!</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">api_keys is not default parameter</p>
+<p><strong>Cause:</strong> Typo <code>api_keys="ollama"</code> (plural)
+<strong>Fix:</strong> Use <code>api_key="ollama"</code> (singular)</p>
 </div>
 <div class="admonition tip">
-<p class="admonition-title">Import Errors with Factories</p>
-<p>Ensure <code>sql_agent/__init__.py</code> exists (can be empty).</p>
+<p class="admonition-title">ModuleNotFoundError: No module named 'models'</p>
+<p><strong>Cause:</strong> Imports broke when running as module
+<strong>Fix:</strong> Use try/except pattern (see Import Structure above)</p>
 </div>
-<h2 id="next-step">Next Step</h2>
-<p>Database ready! Move to <a href="../stage2-basic-agent/">Stage 2: Basic Agent</a> to query it with natural language.</p>
+<h2 id="when-to-use-each">When to Use Each</h2>
+<p><strong>Stage 2 (Basic):</strong> Learning, full control, minimal dependencies
+<strong>Stage 3 (LangChain):</strong> Production, speed, battle-tested features</p>
+<h2 id="try-these">Try These</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># Works - better error handling than Stage 2</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="s2">&quot;Find the top 3 best selling books&quot;</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1"># Fails gracefully - explains why</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="s2">&quot;Delete all customers&quot;</span>  <span class="c1"># Agent: &quot;I can only read data&quot;</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="c1"># Better errors</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="s2">&quot;Show me the users table&quot;</span>  <span class="c1"># Stage 3: &quot;Table &#39;users&#39; doesn&#39;t exist&quot;</span>
+</code></pre></div>
+<h2 id="key-takeaways">Key Takeaways</h2>
+<ol>
+<li><strong>Frameworks catch silent bugs</strong> - FK validation found our typo</li>
+<li><strong>Security by design &gt; validation</strong> - Whitelist beats blacklist</li>
+<li><strong>Less code, more features</strong> - 30% smaller, 200% more capable</li>
+<li><strong>Build Stage 2 first</strong> - Understand internals, then use frameworks</li>
+</ol>
+<hr />
+<p><strong>Full code:</strong> <a href="https://github.com/chidamnat/buildAgents/blob/main/sql_agent/agent_langchain.py"><code>sql_agent/agent_langchain.py</code></a></p>
 
 
 
