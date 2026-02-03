@@ -32,7 +32,7 @@ Build your first agent from scratch using OpenAI's API. Understand the ReAct loo
 
 **Time:** 1-2 hours | **Difficulty:** Intermediate
 
-### [Stage 3: LangChain Version](tutorial/stage3-langchain.md) *(Coming Soon)*
+### [Stage 3: LangChain Version](tutorial/stage3-langchain.md)
 Rebuild using LangChain to understand what frameworks provide.
 
 **Time:** 1 hour | **Difficulty:** Intermediate
