@@ -121,6 +121,88 @@ def execute_sql(query: str) -> List[Dict[str, Any]]:
         conn.close()
         raise Exception(f"SQL Error: {str(e)}")
 
+    ## Addiitonal custom tools
+    def get_table_stats(table_name: str) -> Dict[str, Any]:
+        """
+        Returns statistics about a table including row count,
+        column information and basic data distribution.
+
+        Args:
+            table_name: name of the table to be analyzed
+
+        Returns:
+            Dictionary with table statistics
+        """
+        conn = sqlite3.connect(DB_PATH)
+        cursor = conn.cursor()
+
+        cursor.execute(
+            f"""
+            SELECT name FROM sqlite_master
+            WHERE type = 'table' AND name = ${table_name}
+            """
+        )
+
+        if not cursor.fetchone():
+            conn.close()
+            raise Exception(f"Table {table_name} does not exist")
+
+        stats = {"table_name": table_name}
+
+        try:
+            # row count
+            cursor.execute(f"SELECT COUNT(*) FROM {table_name}")
+            stats["row_count"] = cursor.fetchone()[0]
+
+            # column information
+            cursor.execute(f"PRAGMA table_info({table_name})")
+            columns = cursor.fetchall()
+            stats["columns"] = []
+
+            for col in columns:
+                col_name = col[1]
+                col_type = col[2]
+                is_pk = bool(col[5])
+
+                col_stats = {
+                    "name": col_name,
+                    "type": col_type,
+                    "is_primary_key": is_pk,
+                }
+
+                # numeric columns stats
+                if col_type.upper() in ["INTEGER", "REAL", "NUMERIC"]:
+                    cursor.execute(
+                        f"""
+                        SELECT 
+                           MIN({col_name}) as min_val,
+                           MAX({col_name}) as max_val,
+                           AVG({col_name}) as avg_val
+                        FROM {table_name}
+                        """
+                    )
+                    min_val, max_val, avg_val = cursor.fetchone()
+                    col_stats.update(
+                        {
+                            "min": min_val,
+                            "max": max_val,
+                            "avg": round(avg_val, 2) if avg_val else None,
+                        }
+                    )
+
+                    # null values count
+                    cursor.execute(
+                        f"SELECT COUNT(*) FROM {table_name} WHERE {col_name} IS NULL"
+                    )
+                    col_stats["null_count"] = cursor.fetchone()[0]
+                    stats["columns"].append(col_stats)
+
+            conn.close()
+            return stats
+        except Exception as e:
+            conn.close()
+            raise Exception(f"Error getting table stats: {str(e)}")
+
 
 TOOLS = [
     {
