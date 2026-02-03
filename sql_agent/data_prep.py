@@ -1,8 +1,14 @@
 import random
 from typing import Generator
-from models.book import BookFactory
-from models.customer import CustomerFactory
-from models.order import OrderFactory
+
+try:
+    from sql_agent.models.book import BookFactory
+    from sql_agent.models.customer import CustomerFactory
+    from sql_agent.models.order import OrderFactory
+except ImportError:
+    from models.book import BookFactory
+    from models.customer import CustomerFactory
+    from models.order import OrderFactory
 
 
 def generate_books(num_books=10) -> Generator:

@@ -10,7 +10,11 @@ We're creating a simple online bookstore database with:
 import sqlite3
 from datetime import datetime, timedelta
 from pathlib import Path
-from data_prep import generate_sample_data
+
+try:
+    from sql_agent.data_prep import generate_sample_data
+except ImportError:
+    from data_prep import generate_sample_data
 
 # Database file location
 DB_PATH = Path(__file__).parent.parent / "data" / "bookstore.db"
@@ -62,7 +66,7 @@ def create_database():
             quantity integer,
             order_date text,
             total_amount real,
-            FOREIGN KEY (customer_id) REFERENCES customer(id)
+            FOREIGN KEY (customer_id) REFERENCES customers(id)
             FOREIGN KEY (book_id) REFERENCES books(id)
         )
         """
