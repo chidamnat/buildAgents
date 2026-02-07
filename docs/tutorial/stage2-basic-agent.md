@@ -220,4 +220,4 @@ Always validate LLM outputs. They can hallucinate or be prompt-injected.
 
 ## Next Step
 
-Working basic agent! Next: [Stage 3: LangChain Version](stage3-langchain.md) to see what frameworks provide (coming soon).
+Working basic agent! Next: [Stage 3: LangChain Version](stage3-langchain.md) to see what frameworks provide.

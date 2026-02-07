@@ -159,3 +159,6 @@ Frameworks push you toward better Python packaging practices.
 ---
 
 **Full code:** [`sql_agent/agent_langchain.py`](https://github.com/chidamnat/buildAgents/blob/main/sql_agent/agent_langchain.py)
+## Next Step
+
+Working basic agent! Next: [Stage 4: Custom tools](stage4-custom-tools.md) to see how to blend your custom tools into LangChain.
