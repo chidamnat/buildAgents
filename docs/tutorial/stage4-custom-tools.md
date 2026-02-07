@@ -19,18 +19,22 @@ New capability: get_table_statistics()
 
 ## Why Custom Tools?
 
-**Stage 3 limitation:** Built-in `create_sql_agent` only provides:
+**Stage 3 limitation:** 
+```
+Built-in `create_sql_agent` only provides:
 - `sql_db_query` - Execute SELECT queries
 - `sql_db_schema` - Get table schemas
 - `sql_db_list_tables` - List available tables
+```
 
 **What if you need:**
+```
 - Table statistics (our example)
 - Data validation rules
 - Custom business logic
 - Integration with external APIs
 - Specialized data transformations
-
+```
 **Solution:** Create custom tools with `@tool` decorator!
 
 ## Quick Start
