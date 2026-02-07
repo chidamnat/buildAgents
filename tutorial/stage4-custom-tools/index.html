@@ -1013,8 +1013,8 @@ Full control over tools and extensible</p>
 - Args section helps LLM understand parameters
 - Return strings (agents work with text)</p>
 <h3 id="step-2-the-api-evolution-challenge">Step 2: The API Evolution Challenge</h3>
-<p>After few attempts at fumbling with older LangChain API, the newest one works with <code>create_agent</code>
-<strong>What Actually Works:</strong> 
+<p>After few attempts at fumbling with older LangChain API, the newest one works with <code>create_agent</code></p>
+<p><strong>What Actually Works:</strong> 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">langchain.agents</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_agent</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="c1"># Good to check what&#39;s available (depending on your version)</span>
@@ -1230,7 +1230,7 @@ Result: Agent checks schema first, avoids errors.</p>
 <a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="c1"># Calls get_database_schema, then get_table_statistics for each table</span>
 </code></pre></div></h2>
 <p><strong>Full code:</strong> <a href="../../sql_agent/agent_langchain.py"><code>sql_agent/agent_langchain.py</code></a></p>
-<p><strong>Compare:</strong> gent()<code>(Stage 3) vs</code>run_agent_custom()` (Stage 4) in the same file to see the differences!</p>
+<p><strong>Compare:</strong> <code>run_agent()</code> (Stage 3) vs <code>run_agent_custom()</code> (Stage 4) in the same file to see the differences!</p>
 
 
 
