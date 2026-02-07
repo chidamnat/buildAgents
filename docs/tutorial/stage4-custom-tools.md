@@ -123,6 +123,7 @@ def get_table_statistics(table_name: str) -> str:
 
 ### Step 2: The API Evolution Challenge
 After few attempts at fumbling with older LangChain API, the newest one works with `create_agent`
+
 **What Actually Works:** 
 ```python
 from langchain.agents import create_agent
@@ -333,4 +334,4 @@ answer = result["messages"][-1].content
 
 **Full code:** [`sql_agent/agent_langchain.py`](../../sql_agent/agent_langchain.py)
 
-**Compare:** gent()` (Stage 3) vs `run_agent_custom()` (Stage 4) in the same file to see the differences!
+**Compare:** `run_agent()` (Stage 3) vs `run_agent_custom()` (Stage 4) in the same file to see the differences!
