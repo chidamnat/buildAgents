@@ -15,6 +15,8 @@
         <link rel="canonical" href="https://chidamnat.github.io/buildAgents/tutorial/stage4-custom-tools/">
       
       
+        <link rel="prev" href="../stage3-langchain/">
+      
       
       
         
@@ -25,7 +27,7 @@
     
     
       
-        <title>Stage 4: Custom Tools with LangChain - Build Your Agents 101</title>
+        <title>Stage 4 - Custom Tools - Build Your Agents 101</title>
       
     
     
@@ -110,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Stage 4: Custom Tools with LangChain
+              Stage 4 - Custom Tools
             
           </span>
         </div>
@@ -228,10 +230,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../stage1-database/" class="md-tabs__link">
           
   
@@ -347,28 +351,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -386,7 +393,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -476,6 +483,319 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stage 4 - Custom Tools
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stage 4 - Custom Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-were-building" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What We're Building
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-custom-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Custom Tools?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Start
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Comparison
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Code Comparison">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stage-3-built-in-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 3: Built-in Agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stage-4-custom-tools-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 4: Custom Tools Agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-custom-tools-the-journey" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Building Custom Tools: The Journey
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Building Custom Tools: The Journey">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-define-custom-tools-with-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Define Custom Tools with @tool
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-the-api-evolution-challenge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: The API Evolution Challenge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-tool-error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Tool Error Handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-system-prompts-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: System Prompts Matter
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-differences-built-in-vs-custom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Differences: Built-in vs Custom
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-issues-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Issues &amp; Solutions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-use-each-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Use Each Approach
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="When to Use Each Approach">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-built-in-agent-stage-3-when" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Built-in Agent (Stage 3) when:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-custom-tools-stage-4-when" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Custom Tools (Stage 4) when:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-world-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real-World Example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#try-these" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Try These
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#works-custom-tool-provides-rich-stats-tell-me-interesting-statistics-about-table-orders-works-graceful-error-handling-show-statistics-for-the-sales-table-agent-table-doesnt-exist-available-books-customers-orders-works-agent-combines-tools-which-table-has-the-most-rows-calls-get_database_schema-then-get_table_statistics-for-each-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        # Works - custom tool provides rich stats &quot;Tell me interesting statistics about table orders&quot; # Works - graceful error handling &quot;Show statistics for the sales table&quot; # Agent: &quot;Table doesn&#39;t exist. Available: books, customers, orders&quot; # Works - agent combines tools &quot;Which table has the most rows?&quot; # Calls get_database_schema, then get_table_statistics for each table
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
