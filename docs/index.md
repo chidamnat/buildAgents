@@ -37,6 +37,11 @@ Rebuild using LangChain to understand what frameworks provide.
 
 **Time:** 1 hour | **Difficulty:** Intermediate
 
+### [Stage 4: Custom Tools](tutorial/stage4-custom-tools.md)
+Extend LangChain agents with custom tools beyond built-in capabilities.
+
+**Time:** 45-60 minutes | **Difficulty:** Intermediate-Advanced
+
 ## Prerequisites
 
 - Python 3.8+
