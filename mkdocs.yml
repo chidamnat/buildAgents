@@ -48,6 +48,7 @@ nav:
     - Stage 1 - Database Setup: tutorial/stage1-database.md
     - Stage 2 - Basic Agent: tutorial/stage2-basic-agent.md
     - Stage 3 - LangChain Version: tutorial/stage3-langchain.md
+    - Stage 4 - Custom Tools: tutorial/stage4-custom-tools.md
   - Concepts:
     - What is ReAct?: concepts/react-pattern.md
     - Function Calling: concepts/function-calling.md
